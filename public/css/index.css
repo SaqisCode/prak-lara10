@@ -14,30 +14,6 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    padding: 40px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 120px;
-    height: 120px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%231a6f5420"><path d="M28.1,36.2C19.4,45.2,15,56,15,56s10.8-4.4,19.8-13.1c9-8.7,13.4-19.5,13.4-19.5S37.1,27.5,28.1,36.2z M70.2,63.8 c8.7-9,13.1-19.8,13.1-19.8s-10.8,4.4-19.8,13.1c-9,8.7-13.4,19.5-13.4,19.5S61.2,72.5,70.2,63.8z"/></svg>');
-    background-size: contain;
-    opacity: 0.6;
-}
-
 h1 {
     color: var(--primary-color);
     font-weight: 700;
@@ -215,6 +191,7 @@ h1::after {
 .btn-warning:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 126, 54, 0.3);
+    color: white;
 }
 
 .btn-danger {
@@ -225,6 +202,7 @@ h1::after {
 .btn-danger:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+    color: white;
 }
 
 .action-buttons {
@@ -280,47 +258,26 @@ h1::after {
     animation: float 1.5s ease infinite;
 }
 
-/* Floating medical icons */
-.floating-icon {
-    position: absolute;
-    opacity: 0.05;
-    z-index: 0;
-}
-
-.floating-icon.plus {
-    top: 20%;
-    left: 5%;
-    font-size: 5rem;
-    color: var(--primary-color);
-}
-
-.floating-icon.heart {
-    bottom: 15%;
-    right: 5%;
-    font-size: 4rem;
-    color: var(--accent-color);
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .header-logo {
         margin: 20px 0 0 0;
         align-self: flex-end;
     }
-    
+
     .header-logo::before {
         display: none;
     }
-    
+
     .action-buttons {
         flex-wrap: wrap;
     }
-    
+
     .btn {
         width: 100%;
         margin-bottom: 10px;

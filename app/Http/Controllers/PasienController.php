@@ -22,7 +22,7 @@ class PasienController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'nik' => 'required|unique:pasiens',
+            'nik' => 'required|unique:pasiens|numeric|max_digits:16|min_digits:16',
             'jenis_kelamin' => 'required'
         ]);
 
@@ -40,7 +40,7 @@ class PasienController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'nik' => 'required|unique:pasiens,nik,'.$pasien->id,
+            'nik' => 'required|numeric|max_digits:16|min_digits:16',
             'jenis_kelamin' => 'required'
         ]);
 
