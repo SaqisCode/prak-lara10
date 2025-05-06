@@ -155,6 +155,16 @@ h1::after {
     border: 1px solid var(--accent-color);
 }
 
+.btn-info {
+    color: white;
+}
+
+.btn-info:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(255, 126, 54, 0.3);
+    color: white;
+}
+
 .btn {
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -179,7 +189,7 @@ h1::after {
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(26, 111, 84, 0.3);
 }
 
@@ -189,7 +199,7 @@ h1::after {
 }
 
 .btn-warning:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(255, 126, 54, 0.3);
     color: white;
 }
@@ -200,7 +210,7 @@ h1::after {
 }
 
 .btn-danger:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
     color: white;
 }

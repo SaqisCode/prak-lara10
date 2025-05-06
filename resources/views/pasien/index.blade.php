@@ -61,6 +61,9 @@
                             </span>
                         </td>
                         <td class="action-buttons">
+                            <a href="{{ route('pasien.show', $pasien->id) }}" class="btn btn-info btn-sm">
+                                <i class="bi bi-eye"></i> Detail
+                            </a>
                             <a href="{{ route('pasien.edit', $pasien->id) }}" class="btn btn-warning btn-sm">
                                 <i class="bi bi-pencil"></i> Edit
                             </a>

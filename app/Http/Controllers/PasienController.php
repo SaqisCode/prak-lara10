@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pasien;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PasienController extends Controller
 {
@@ -24,6 +25,13 @@ class PasienController extends Controller
             'nama' => 'required',
             'nik' => 'required|unique:pasiens|numeric|max_digits:16|min_digits:16',
             'jenis_kelamin' => 'required'
+        ], [
+            'nama.required' => 'Wajib mengisi Nama Lengkap!',
+            'nik.required' => 'Wajib mengisi NIK!',
+            'nik.numeric' => 'NIK tidak dapat berisi huruf!',
+            'nik.max_digits' => 'NIK tidak dapat lebih dari 16 digit!',
+            'nik.min_digits' => 'NIK tidak dapat kurang dari 16 digit!',
+            'nik.unique' => 'NIK ini sudah digunakan oleh pasien lain!',
         ]);
 
         Pasien::create($request->all());
@@ -40,8 +48,21 @@ class PasienController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'nik' => 'required|numeric|max_digits:16|min_digits:16',
+            'nik' => [
+                'required',
+                'numeric',
+                'max_digits:16',
+                'min_digits:16',
+                Rule::unique('pasiens')->ignore($pasien->id),
+            ],
             'jenis_kelamin' => 'required'
+        ], [
+            'nama.required' => 'Wajib mengisi Nama Lengkap!',
+            'nik.required' => 'Wajib mengisi NIK!',
+            'nik.numeric' => 'NIK tidak dapat berisi huruf!',
+            'nik.max_digits' => 'NIK tidak dapat lebih dari 16 digit!',
+            'nik.min_digits' => 'NIK tidak dapat kurang dari 16 digit!',
+            'nik.unique' => 'NIK ini sudah digunakan oleh pasien lain!',
         ]);
 
         $pasien->update($request->all());
@@ -53,5 +74,10 @@ class PasienController extends Controller
     {
         $pasien->delete();
         return redirect()->route('pasien.index')->with('success', 'Pasien berhasil dihapus!');
+    }
+
+    public function show(Pasien $pasien)
+    {
+        return view('pasien.show', compact('pasien'));
     }
 }

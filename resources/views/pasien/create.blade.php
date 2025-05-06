@@ -11,7 +11,7 @@
         <form action="{{ route('pasien.store') }}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
+                <label for="nama" class="form-label">Nama Lengkap</label>
                 <input type="text" class="form-control @error("nama") is-invalid @enderror" id="nama" name="nama" value="{{ old('nama') }}">
                 @error("nama")
                     <div class="alert alert-danger">{{ $message }}</div>

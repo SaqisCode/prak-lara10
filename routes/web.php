@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 
 Route::resource('pasien', PasienController::class);
+Route::get('/pasien/{pasien}', [PasienController::class, 'show'])->name('pasien.show');
