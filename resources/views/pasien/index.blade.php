@@ -25,9 +25,6 @@
         @endif
 
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <a href="{{ route('pasien.create') }}" class="btn btn-primary">
-                <i class="bi bi-person-plus"></i> Tambah Pasien Baru
-            </a>
             <div class="d-flex align-items-center">
                 <span class="me-2 text-muted">Total Pasien:</span>
                 <span class="badge rounded-pill bg-primary">{{ count($pasiens) }}</span>
@@ -50,7 +47,7 @@
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>
-                            <strong>{{ $pasien->nama }}</strong>
+                            <strong>{{ $pasien->name }}</strong>
                             <div class="text-muted small">{{ $pasien->alamat }}</div>
                         </td>
                         <td>{{ $pasien->nik }}</td>

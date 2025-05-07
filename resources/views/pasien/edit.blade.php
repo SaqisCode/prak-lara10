@@ -12,10 +12,17 @@
             @csrf
             @method('PUT')
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control @error("nama") is-invalid @enderror" id="nama" name="nama" value="{{ $pasien->nama }}">
-                @error("nama")
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control @error("name") is-invalid @enderror" id="name" name="name" value="{{ $pasien->name }}">
+                @error("name")
                 <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control @error("email") is-invalid @enderror" id="email" name="email" value="{{ $pasien->email }}">
+                @error("email")
+                    <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
@@ -31,6 +38,13 @@
                     <option value="Laki-laki" {{ $pasien->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                     <option value="Perempuan" {{ $pasien->jenis_kelamin == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control @error("password") is-invalid @enderror" id="password" name="password" value="{{ $pasien->password }}">
+                @error("password")
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{ route('pasien.index') }}" class="btn btn-secondary">Kembali</a>
