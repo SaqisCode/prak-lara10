@@ -58,13 +58,13 @@
                             </span>
                         </td>
                         <td class="action-buttons">
-                            <a href="{{ route('pasien.show', $pasien->id) }}" class="btn btn-info btn-sm">
+                            <a href="{{ route('admin.pasien.show', $pasien->id) }}" class="btn btn-info btn-sm">
                                 <i class="bi bi-eye"></i> Detail
                             </a>
-                            <a href="{{ route('pasien.edit', $pasien->id) }}" class="btn btn-warning btn-sm">
+                            <a href="{{ route('admin.pasien.edit', $pasien->id) }}" class="btn btn-warning btn-sm">
                                 <i class="bi bi-pencil"></i> Edit
                             </a>
-                            <form action="{{ route('pasien.destroy', $pasien->id) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('admin.pasien.destroy', $pasien->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data pasien ini?')">

@@ -7,208 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1a6f54;
-            --secondary-color: #e8f4f0;
-            --accent-color: #ff7e36;
-            --text-dark: #2d3748;
-            --text-light: #f8f9fa;
-            --section-padding: 80px 0;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* Header Styles */
-        .main-header {
-            background: linear-gradient(135deg, rgba(26, 111, 84, 0.9) 0%, rgba(14, 90, 66, 0.9) 100%), 
-                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 0 80px;
-            position: relative;
-        }
-
-        .navbar {
-            transition: all 0.3s ease;
-            padding: 20px 0;
-        }
-
-        .navbar.scrolled {
-            background-color: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-        }
-
-        .navbar.scrolled .nav-link {
-            color: var(--text-dark) !important;
-        }
-
-        .navbar.scrolled .navbar-brand {
-            color: var(--primary-color) !important;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        /* Service Cards */
-        .service-card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Features Section */
-        .feature-box {
-            padding: 30px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Footer */
-        .main-footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0e5a42;
-            border-color: #0e5a42;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(26, 111, 84, 0.3);
-        }
-
-        .btn-outline-light {
-            border-radius: 50px;
-            padding: 10px 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-light:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-        }
-
-        /* Utility Classes */
-        .section-title {
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 40px;
-            font-weight: 700;
-        }
-
-        .section-title:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
-            border-radius: 2px;
-        }
-
-        .bg-light-green {
-            background-color: var(--secondary-color);
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 <body>
     <!-- Navigation -->
@@ -248,7 +47,7 @@
                         </form>
                         @else
                             <a href="{{ route('login') }}" class="btn btn-outline-light">
-                                <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                                <i class="bi bi-box-arrow-in-right me-1"></i> Masuk / Daftar
                             </a>
                         @endif
                     </li>
@@ -262,19 +61,21 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
+                    @if(Auth::check())
+                        <h3> Selamat Datang , {{ Auth::user()->name }} </h3>
+                    @else
+                        <h3> Selamat Datang , Guest </h3>
+                    @endif
                     <h1 class="hero-title">Pelayanan Kesehatan Terpadu Untuk Masyarakat</h1>
                     <p class="hero-subtitle">Puskesmas Djatiroto memberikan pelayanan kesehatan yang berkualitas dengan fasilitas modern dan tenaga medis profesional.</p>
                     <div class="d-flex gap-3">
                         <a href="#layanan" class="btn btn-primary">
                             <i class="bi bi-search-heart me-2"></i>Lihat Layanan
                         </a>
-                        <a href="#" class="btn btn-outline-light">
-                            <i class="bi bi-calendar-check me-2"></i>Daftar Online
-                        </a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-none d-lg-block">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                          alt="Dokter Puskesmas" class="img-fluid rounded-3 shadow">
                 </div>
             </div>
@@ -282,82 +83,82 @@
     </header>
 
     <!-- Services Section -->
-    <section id="layanan" class="py-5">
+    <section id="layanan" class="py-5 ">
         <div class="container">
-            <h2 class="text-center section-title">Layanan Kami</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
+            <div class="title-container">
+                <h2 class="section-title">Layanan Kami</h2>
+            </div>
+            <div class="slider-container">
+                <div class="slider-controls">
+                    <button id="prev-btn" class="slider-btn"><i class="bi bi-chevron-left"></i></button>
+                    <button id="next-btn" class="slider-btn"><i class="bi bi-chevron-right"></i></button>
+                </div>
+
+                <div class="service-slider">
                     <div class="service-card card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon">
                                 <i class="bi bi-heart-pulse"></i>
                             </div>
-                            <h4>Pelayanan Klinik</h4>
-                            <p>Pemeriksaan kesehatan umum, pengobatan, dan konsultasi dokter umum.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                            <h5>Pelayanan Klinik</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+
                     <div class="service-card card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon">
                                 <i class="bi bi-heart-fill"></i>
                             </div>
-                            <h4>Kesehatan Ibu & Anak</h4>
-                            <p>Pemeriksaan kehamilan, imunisasi, dan konsultasi gizi balita.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                            <h5>Kesehatan Ibu & Anak</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+
                     <div class="service-card card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon">
                                 <i class="bi bi-eyedropper"></i>
                             </div>
-                            <h4>Laboratorium</h4>
-                            <p>Pemeriksaan darah, urine, dan tes kesehatan lainnya.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                            <h5>Laboratorium</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+
                     <div class="service-card card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon">
                                 <i class="bi bi-capsule"></i>
                             </div>
-                            <h4>Apotek</h4>
-                            <p>Pelayanan obat dengan resep dokter dan obat generik.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                            <h5>Apotek</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+
                     <div class="service-card card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon">
                                 <i class="bi bi-activity"></i>
                             </div>
-                            <h4>Gawat Darurat</h4>
-                            <p>Pelayanan 24 jam untuk kasus gawat darurat.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                            <h5>Gawat Darurat</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+
                     <div class="service-card card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon">
                                 <i class="bi bi-people-fill"></i>
                             </div>
-                            <h4>Posyandu</h4>
-                            <p>Pelayanan kesehatan masyarakat terintegrasi.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Selengkapnya</a>
+                            <h5>Posyandu</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="slider-dots"></div>
+            <div class="text-center">
+                <div class="btn btn-primary mt-3">Buat Janji Temu Dengan Dokter</div>
             </div>
         </div>
     </section>
@@ -365,7 +166,7 @@
     <!-- Features Section -->
     <section id="fasilitas" class="py-5 bg-light-green">
         <div class="container">
-            <h2 class="text-center section-title">Fasilitas Unggulan</h2>
+            <h2 class="section-title">Fasilitas Unggulan</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="feature-box">
@@ -437,50 +238,31 @@
         </div>
     </section>
 
-    <!-- Doctors Section -->
-    <section id="dokter" class="py-5">
-        <div class="container">
-            <h2 class="text-center section-title">Tim Dokter Kami</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="card border-0 text-center">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" class="card-img-top rounded-circle mx-auto mt-3" style="width: 150px; height: 150px; object-fit: cover;" alt="Dokter">
-                        <div class="card-body">
-                            <h5 class="card-title">dr. Dedi Pratama</h5>
-                            <p class="card-text small">Spesialisasi: Kesehatan Gigi</p>
-                            <button>Lihat Jadwal</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- Stats Section -->
-    <section class="py-5 bg-light-green">
+    <section class="py-5">
         <div class="container">
             <div class="row g-4 text-center">
                 <div class="col-md-3">
                     <div class="p-3">
-                        <h2 class="fw-bold text-primary">15+</h2>
+                        <h2 class="fw-bold">15+</h2>
                         <p class="mb-0">Tenaga Medis</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="p-3">
-                        <h2 class="fw-bold text-primary">24/7</h2>
+                        <h2 class="fw-bold">24/7</h2>
                         <p class="mb-0">Layanan Gawat Darurat</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="p-3">
-                        <h2 class="fw-bold text-primary">10+</h2>
+                        <h2 class="fw-bold">10+</h2>
                         <p class="mb-0">Jenis Layanan</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="p-3">
-                        <h2 class="fw-bold text-primary">5000+</h2>
+                        <h2 class="fw-bold">5000+</h2>
                         <p class="mb-0">Pasien Per Bulan</p>
                     </div>
                 </div>
@@ -580,6 +362,121 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.service-slider');
+            const cards = document.querySelectorAll('.service-card');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const dotsContainer = document.querySelector('.slider-dots');
+
+            let cardWidth = cards[0].offsetWidth + 20; // Card width + gap
+            let currentIndex = 0;
+            let cardsPerView = calculateCardsPerView();
+            let maxIndex = cards.length - cardsPerView;
+
+            // Create dots
+            for (let i = 0; i < maxIndex + 1; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            // Update dots
+            function updateDots() {
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            // Calculate cards per view based on viewport
+            function calculateCardsPerView() {
+                const viewportWidth = window.innerWidth;
+                if (viewportWidth >= 1200) return 3;
+                if (viewportWidth >= 768) return 2;
+                return 1;
+            }
+
+            // Go to specific slide
+            function goToSlide(index) {
+                currentIndex = Math.max(0, Math.min(index, maxIndex));
+                slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+                updateDots();
+            }
+
+            // Previous slide
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    goToSlide(currentIndex);
+                }
+            });
+
+            // Next slide
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    goToSlide(currentIndex);
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                cardWidth = cards[0].offsetWidth + 20;
+                cardsPerView = calculateCardsPerView();
+                maxIndex = cards.length - cardsPerView;
+
+                // Recreate dots if needed
+                const dots = document.querySelectorAll('.dot');
+                if (dots.length !== maxIndex + 1) {
+                    dotsContainer.innerHTML = '';
+                    for (let i = 0; i < maxIndex + 1; i++) {
+                        const dot = document.createElement('div');
+                        dot.classList.add('dot');
+                        if (i === currentIndex) dot.classList.add('active');
+                        dot.addEventListener('click', () => goToSlide(i));
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+
+                // Adjust current position
+                currentIndex = Math.min(currentIndex, maxIndex);
+                goToSlide(currentIndex);
+            });
+
+            // Touch events for mobile swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left - go to next slide
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                        goToSlide(currentIndex);
+                    }
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right - go to previous slide
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        goToSlide(currentIndex);
+                    }
+                }
+            }
         });
     </script>
 </body>

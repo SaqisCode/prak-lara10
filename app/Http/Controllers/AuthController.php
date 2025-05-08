@@ -12,7 +12,7 @@ class AuthController extends Controller
 {
     public function register()
     {
-        return view('pasien/auth/register');
+        return view('auth/register');
     }
 
     public function registerPost(Request $request)
@@ -49,7 +49,7 @@ class AuthController extends Controller
 
     public function login()
     {
-        return view('pasien/auth/login');
+        return view('auth/login');
     }
 
     public function loginPost(Request $request)

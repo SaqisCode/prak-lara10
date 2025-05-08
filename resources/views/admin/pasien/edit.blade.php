@@ -8,7 +8,7 @@
     <div class="container mt-5">
         <h1>Edit Data Pasien</h1>
 
-        <form action="{{ route('pasien.update', $pasien->id) }}" method="POST">
+        <form action="{{ route('admin.pasien.update', $pasien->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -47,7 +47,7 @@
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{{ route('pasien.index') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('admin.pasien.index') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>
 </body>

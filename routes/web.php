@@ -9,8 +9,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('pasien', PasienController::class);
-Route::get('/pasien/{pasien}', [PasienController::class, 'show'])->name('pasien.show');
+Route::get('/dashboard', function () {
+    return view('admin/dashboard');
+});
+
+Route::prefix('admin')->group(function () {
+    Route::resource('pasien', PasienController::class);
+    Route::get('/pasien/{pasien}', [PasienController::class, 'show'])->name('admin.pasien.show');
+});
 
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/register', [AuthController::class, 'register'])->name('register');

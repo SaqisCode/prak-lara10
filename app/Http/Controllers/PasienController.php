@@ -11,12 +11,12 @@ class PasienController extends Controller
     public function index()
     {
         $pasiens = Pasien::all();
-        return view('pasien.index', compact('pasiens'));
+        return view('admin/pasien.index', compact('pasiens'));
     }
 
     public function edit(Pasien $pasien)
     {
-        return view('pasien.edit', compact('pasien'));
+        return view('admin/pasien.edit', compact('pasien'));
     }
 
     public function update(Request $request, Pasien $pasien)
@@ -50,17 +50,17 @@ class PasienController extends Controller
 
         $pasien->update($request->all());
 
-        return redirect()->route('pasien.index')->with('success', 'Data pasien berhasil diperbarui!');
+        return redirect()->route('admin/pasien.index')->with('success', 'Data pasien berhasil diperbarui!');
     }
 
     public function destroy(Pasien $pasien)
     {
         $pasien->delete();
-        return redirect()->route('pasien.index')->with('success', 'Pasien berhasil dihapus!');
+        return redirect()->route('admin/pasien.index')->with('success', 'Pasien berhasil dihapus!');
     }
 
     public function show(Pasien $pasien)
     {
-        return view('pasien.show', compact('pasien'));
+        return view('admin/pasien.show', compact('pasien'));
     }
 }

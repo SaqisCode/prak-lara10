@@ -14,10 +14,10 @@
         <p><strong>Jenis Kelamin:</strong> {{ $pasien->jenis_kelamin }}</p>
         <p><strong>Password:</strong> {{ $pasien->password }}</p>
 
-        <a href="{{ route('pasien.edit', $pasien->id) }}" class="btn btn-warning btn-sm">
+        <a href="{{ route('admin.pasien.edit', $pasien->id) }}" class="btn btn-warning btn-sm">
             <i class="bi bi-pencil"></i> Edit
         </a>
-        <a href="{{ route('pasien.index') }}" class="btn btn-secondary">
+        <a href="{{ route('admin.pasien.index') }}" class="btn btn-secondary">
             <i class="bi bi-arrow-left"></i> Kembali
         </a>
     </div>
