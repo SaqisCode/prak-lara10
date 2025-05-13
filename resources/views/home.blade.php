@@ -28,9 +28,6 @@
                         <a class="nav-link" href="#layanan">Layanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#fasilitas">Fasilitas</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#dokter">Dokter</a>
                     </li>
                     <li class="nav-item">
@@ -83,7 +80,7 @@
     </header>
 
     <!-- Services Section -->
-    <section id="layanan" class="py-5 ">
+    <section id="layanan" class="py-5 bg-light-green">
         <div class="container">
             <div class="title-container">
                 <h2 class="section-title">Layanan Kami</h2>
@@ -159,81 +156,6 @@
             <div class="slider-dots"></div>
             <div class="text-center">
                 <div class="btn btn-primary mt-3">Buat Janji Temu Dengan Dokter</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="fasilitas" class="py-5 bg-light-green">
-        <div class="container">
-            <h2 class="section-title">Fasilitas Unggulan</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
-                                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
-                            </div>
-                            <h4 class="mb-0">Alat Medis Modern</h4>
-                        </div>
-                        <p>Didukung dengan peralatan medis terkini untuk diagnosis dan pengobatan yang akurat.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
-                                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
-                            </div>
-                            <h4 class="mb-0">Tenaga Profesional</h4>
-                        </div>
-                        <p>Dokter dan perawat berpengalaman dengan sertifikasi resmi.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
-                                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
-                            </div>
-                            <h4 class="mb-0">Lingkungan Nyaman</h4>
-                        </div>
-                        <p>Ruang tunggu dan perawatan yang bersih, nyaman, dan higienis.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
-                                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
-                            </div>
-                            <h4 class="mb-0">Sistem Online</h4>
-                        </div>
-                        <p>Pendaftaran online dan rekam medis elektronik untuk kemudahan pasien.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
-                                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
-                            </div>
-                            <h4 class="mb-0">Biaya Terjangkau</h4>
-                        </div>
-                        <p>Pelayanan kesehatan berkualitas dengan biaya terjangkau.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-box">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-2 rounded me-3">
-                                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
-                            </div>
-                            <h4 class="mb-0">Lokasi Strategis</h4>
-                        </div>
-                        <p>Berada di pusat kota dengan akses transportasi yang mudah.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

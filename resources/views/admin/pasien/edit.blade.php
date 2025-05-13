@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Pasien</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+@extends('admin.layouts.app')
+
+@section('title', 'Pasien')
+
+@section('content')
     <div class="container mt-5">
         <h1>Edit Data Pasien</h1>
 
-        <form action="{{ route('admin.pasien.update', $pasien->id) }}" method="POST">
+        <form action="{{ route('pasien.update', $pasien->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -47,8 +45,7 @@
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{{ route('admin.pasien.index') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('pasien.index') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>
-</body>
-</html>
+@endsection

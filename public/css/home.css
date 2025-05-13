@@ -82,21 +82,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Features Section */
-.feature-box {
-    padding: 30px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    height: 100%;
-}
-
-.feature-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
 /* Footer */
 .main-footer {
     background-color: var(--primary-color);
@@ -246,7 +231,7 @@ overflow: hidden;
 }
 
 .service-card:hover {
-transform: translateY(-10px);
+transform: translateY(-5px);
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 

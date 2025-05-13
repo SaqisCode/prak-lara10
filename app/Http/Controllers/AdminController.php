@@ -6,17 +6,17 @@ use App\Models\Pasien;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class PasienController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
         $pasiens = Pasien::all();
-        return view('admin.pasien.index', compact('pasiens'));
+        return view('admin.dashboard', compact('pasiens'));
     }
 
     public function edit(Pasien $pasien)
     {
-        return view('admin.pasien.edit', compact('pasien'));
+        return view('pasien.edit', compact('pasien'));
     }
 
     public function update(Request $request, Pasien $pasien)
@@ -61,6 +61,6 @@ class PasienController extends Controller
 
     public function show(Pasien $pasien)
     {
-        return view('admin.pasien.show', compact('pasien'));
+        return view('pasien.show', compact('pasien'));
     }
 }

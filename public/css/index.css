@@ -1,11 +1,11 @@
-:root {
+/* :root {
     --primary-color: #1a6f54; /* Deep healthcare green */
     --secondary-color: #e8f4f0; /* Light mint */
     --accent-color: #ff7e36; /* Vibrant orange */
     --gold-accent: #d4af37; /* Luxury gold */
     --text-dark: #2d3748;
     --text-light: #f8f9fa;
-}
+} */
 
 body {
     background: linear-gradient(135deg, #f0f9f6 0%, #e6f4f1 100%);
