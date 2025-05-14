@@ -13,12 +13,12 @@
     <div class="row">
         <!-- Patients Card -->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-primary text-white mb-4">
+            <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="fw-light">Total Patients</h6>
-                            <h3 class="mb-0">1,254</h3>
+                            <h6 class="fw-light">Total Pasien</h6>
+                            <h3 class="mb-0">{{ count($pasiens) }}</h3>
                         </div>
                         <i class="fas fa-procedures fa-2x"></i>
                     </div>
@@ -29,15 +29,15 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Doctors Card -->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-success text-white mb-4">
+            <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="fw-light">Total Doctors</h6>
-                            <h3 class="mb-0">48</h3>
+                            <h6 class="fw-light">Total Dokter</h6>
+                            <h3 class="mb-0">{{ count($dokters) }}</h3>
                         </div>
                         <i class="fas fa-user-md fa-2x"></i>
                     </div>
@@ -48,17 +48,17 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Appointments Card -->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-warning text-white mb-4">
+            <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="fw-light">Today's Appointments</h6>
-                            <h3 class="mb-0">24</h3>
+                            <h6 class="fw-light">Pasien Rawat Inap</h6>
+                            <h3 class="mb-0">0</h3>
                         </div>
-                        <i class="fas fa-calendar-check fa-2x"></i>
+                        <i class="fas fa-procedures fa-2x"></i>
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -67,17 +67,17 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Revenue Card -->
         <div class="col-xl-3 col-md-6">
-            <div class="card bg-danger text-white mb-4">
+            <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h6 class="fw-light">Monthly Revenue</h6>
-                            <h3 class="mb-0">$24,580</h3>
+                            <h6 class="fw-light">Janji Temu</h6>
+                            <h3 class="mb-0">0</h3>
                         </div>
-                        <i class="fas fa-dollar-sign fa-2x"></i>
+                        <i class="fas fa-calendar-check fa-2x"></i>
                     </div>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">

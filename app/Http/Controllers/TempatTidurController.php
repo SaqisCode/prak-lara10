@@ -17,6 +17,6 @@ class TempatTidurController extends Controller
         $tt->status = $request->status;
         $tt->save();
 
-        return back()->with('success', 'Status tempat tidur diperbarui');
+        return back()->with('success', 'Status tempat tidur berhasil diperbarui!');
     }
 }

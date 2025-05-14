@@ -78,7 +78,7 @@ class DokterController extends Controller
         'password' => Hash::make($request->password)
     ]);
 
-        return redirect()->route('dokter.index')->with('success', 'Dokter berhasil ditambahkan.');
+        return redirect()->route('dokter.index')->with('success', 'Dokter berhasil ditambahkan!');
     }
 
     /**
@@ -133,7 +133,7 @@ class DokterController extends Controller
 
         $dokter->update($request->all());
 
-        return redirect()->route('dokter.index')->with('success', 'Informasi dokter berhasil diperbarui.');
+        return redirect()->route('dokter.index')->with('success', 'Data dokter berhasil diperbarui!');
     }
 
     /**
@@ -147,6 +147,6 @@ class DokterController extends Controller
         $dokter = dokter::findOrFail($id);
         $dokter->delete();
 
-        return redirect()->route('dokter.index')->with('success', 'Dokter berhasil dihapus.');
+        return redirect()->route('dokter.index')->with('success', 'Data dokter berhasil dihapus!');
     }
 }

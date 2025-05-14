@@ -13,7 +13,7 @@
     --light-color: #ecf0f1;
     --dark-color: #34495e;
     --gray-color: #95a5a6;
-    
+
     /* Sidebar */
     --sidebar-width: 240px;
     --sidebar-collapsed-width: 80px;
@@ -23,15 +23,15 @@
     --sidebar-text-muted: rgba(255, 255, 255, 0.6);
     --sidebar-hover-bg: rgba(255, 255, 255, 0.08);
     --sidebar-active-bg: rgba(52, 152, 219, 0.2);
-    
+
     /* Navbar */
     --topnav-height: 56px;
     --topnav-bg: linear-gradient(135deg, var(--secondary-dark), var(--secondary-color));
-    
+
     /* Card */
     --card-radius: 10px;
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    
+
     /* Transitions */
     --transition-fast: all 0.15s ease;
     --transition-normal: all 0.3s ease;
@@ -420,11 +420,6 @@ a {
     margin-bottom: 1.5rem;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
 .card-header {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -442,27 +437,6 @@ a {
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 1rem 1.5rem;
     border-radius: 0 0 var(--card-radius) var(--card-radius) !important;
-}
-
-/* Stats Cards */
-.card.bg-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
-    color: white;
-}
-
-.card.bg-success {
-    background: linear-gradient(135deg, var(--success-color), #27ae60) !important;
-    color: white;
-}
-
-.card.bg-warning {
-    background: linear-gradient(135deg, var(--warning-color), #e67e22) !important;
-    color: white;
-}
-
-.card.bg-danger {
-    background: linear-gradient(135deg, var(--danger-color), #c0392b) !important;
-    color: white;
 }
 
 .card .card-body h6.fw-light {
@@ -616,15 +590,15 @@ a {
     .sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
         transform: translateX(-100%);
     }
-    
+
     .sb-nav-fixed #layoutSidenav #layoutSidenav_nav.sb-sidenav-show {
         transform: translateX(0);
     }
-    
+
     .sb-nav-fixed #layoutSidenav #layoutSidenav_content {
         margin-left: 0;
     }
-    
+
     .container-fluid.px-4 {
         padding: 1.5rem;
     }
@@ -634,11 +608,11 @@ a {
     .container-fluid.px-4 {
         padding: 1rem;
     }
-    
+
     .card {
         margin-bottom: 1rem;
     }
-    
+
     .table-responsive {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;

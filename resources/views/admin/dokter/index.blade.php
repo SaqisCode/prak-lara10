@@ -16,25 +16,25 @@
         </div>
     </div>
 
-        @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show">
-                <i class="bi bi-check-circle-fill"></i>
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div class="d-flex align-items-center">
                 <span class="me-2 text-muted">Total Dokter:</span>
-                <span class="badge rounded-pill bg-primary">{{ count($dokters) }}</span>
+                <span class="badge rounded-pill bg-secondary">{{ count($dokters) }}</span>
             </div>
         </div>
 
-        <a href="{{ route('dokter.create') }}" class="btn btn-primary">Tambah Dokter</a>
+        <a href="{{ route('dokter.create') }}" class="btn btn-primary mb-2">Tambah Dokter</a>
+
+        @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show">
+            <i class="bi bi-check-circle-fill"></i>
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
 
         <div class="table-container">
-            <table class="table table-hover">
+            <table class="table table-hover table-striped">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -46,13 +46,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($dokters as $index => $dokter)
+                    @forelse($dokters as $index => $dokter)
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>
                             <strong>{{ $dokter->name }}</strong>
                             <div class="text-sm text-gray-500">0821-3345-6789</div>
-                            <div class="text-muted small">{{ $dokter->alamat }}</div>
                         </td>
                         <td>{{ $dokter->spesialis}}</td>
                         <td>{{ $dokter->nik }}</td>
@@ -75,21 +74,13 @@
                             </form>
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="6" class="text-center">Tidak ada Data</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
     </div>
 @endsection
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script>
-        // Add active class to current page in pagination
-        document.querySelectorAll('.page-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelector('.page-item.active').classList.remove('active');
-                this.classList.add('active');
-            });
-        });
-    </script>

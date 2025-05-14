@@ -44,7 +44,7 @@ class RawatInapController extends Controller
         $tt->status = 'terisi';
         $tt->save();
 
-        return redirect()->route('pasien.index')->with('success', 'Pasien berhasil dirawat inap');
+        return redirect()->route('pasien.index')->with('success', 'Pasien berhasil dirawat inap!');
     }
 
     public function destroy($id)
@@ -58,6 +58,6 @@ class RawatInapController extends Controller
         // Hapus data rawat inap
         $rawatInap->delete();
 
-        return redirect()->route('rawatInap.index')->with('success', 'Pasien berhasil dipulangkan');
+        return redirect()->route('rawatInap.index')->with('success', 'Pasien berhasil dipulangkan!');
     }
 }

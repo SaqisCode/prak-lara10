@@ -9,6 +9,7 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\RawatInapController;
 use App\Http\Controllers\TempatTidurController;
+use App\Http\Controllers\JadwalDokterController;
 
 Route::get('/', function () {
     return view('home');
@@ -42,3 +43,10 @@ Route::post('/rawat-inap', [RawatInapController::class, 'store'])->name('rawatIn
 Route::get('/rawat-inap', [RawatInapController::class, 'index'])->name('rawatInap.index');
 
 Route::delete('/rawat-inap/{id}', [RawatInapController::class, 'destroy'])->name('rawatInap.destroy');
+
+Route::get('/jadwal', [JadwalDokterController::class, 'index'])->name('dokter.jadwal');
+Route::get('/jadwal/create', [JadwalDokterController::class, 'create'])->name('dokter.jadwal.create');
+Route::post('/jadwal', [JadwalDokterController::class, 'store'])->name('dokter.jadwal.store');
+Route::get('/jadwal/{jadwal}/edit', [JadwalDokterController::class, 'edit'])->name('dokter.jadwal.edit');
+Route::put('/jadwal/{jadwal}', [JadwalDokterController::class, 'update'])->name('dokter.jadwal.update');
+Route::delete('/jadwal/{jadwal}', [JadwalDokterController::class, 'destroy'])->name('dokter.jadwal.destroy');

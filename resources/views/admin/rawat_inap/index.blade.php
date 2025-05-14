@@ -15,20 +15,33 @@
             </div>
         </div>
     </div>
-        <a href="{{ route('kamar.create') }}" class="btn btn-primary mb-3">Tambah Kamar</a>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+            <span class="me-2 text-muted">Total Kamar:</span>
+            <span class="badge rounded-pill bg-secondary">{{ count($kamars) }}</span>
+        </div>
+    </div>
+
+        <a href="{{ route('kamar.create') }}" class="btn btn-primary mb-2">Tambah Kamar</a>
+
 
         @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="alert alert-success alert-dismissible fade show">
+                <i class="bi bi-check-circle-fill"></i>
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @endif
 
-        <table class="table table-bordered table-striped">
-            <thead class="table-success">
+    <div class="table-container">
+        <table class="table table-hover table-striped">
+            <thead>
             <tr>
                 <th>No</th>
                 <th>Nama Kamar</th>
                 <th>Lantai</th>
                 <th>Kelas</th>
-                <th>Jumlah TT</th>
                 <th>Tempat Tidur</th>
                 <th>Aksi</th>
             </tr>
@@ -40,11 +53,10 @@
                 <td>{{ $kamar->nama_kamar }}</td>
                 <td>{{ $kamar->lantai }}</td>
                 <td>{{ $kamar->kelas }}</td>
-                <td>{{ $kamar->jumlah_tt }}</td>
                 <td>
                     <ul class="mb-0">
                     @foreach($kamar->tempatTidur as $tt)
-                        <li>{{ $tt->kode_tt }} - 
+                        <li>{{ $tt->kode_tt }} -
                         <span class="badge bg-{{ $tt->status == 'kosong' ? 'success' : ($tt->status == 'terisi' ? 'danger' : 'warning') }}">
                             {{ ucfirst($tt->status) }}
                         </span>
@@ -69,7 +81,9 @@
                 </td>
                 </tr>
             @empty
-                <tr><td colspan="7" class="text-center">Belum ada kamar</td></tr>
+                <tr>
+                    <td colspan="6" class="text-center">Tidak ada Data</td>
+                </tr>
             @endforelse
             </tbody>
         </table>

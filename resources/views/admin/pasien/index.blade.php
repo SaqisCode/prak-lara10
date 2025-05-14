@@ -16,6 +16,13 @@
         </div>
     </div>
 
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <span class="me-2 text-muted">Total Pasien:</span>
+                <span class="badge rounded-pill bg-secondary">{{ count($pasiens) }}</span>
+            </div>
+        </div>
+
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show">
                 <i class="bi bi-check-circle-fill"></i>
@@ -24,15 +31,8 @@
             </div>
         @endif
 
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <div class="d-flex align-items-center">
-                <span class="me-2 text-muted">Total Pasien:</span>
-                <span class="badge rounded-pill bg-primary">{{ count($pasiens) }}</span>
-            </div>
-        </div>
-
         <div class="table-container">
-            <table class="table table-hover">
+            <table class="table table-hover table-striped">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($pasiens as $index => $pasien)
+                    @forelse($pasiens as $index => $pasien)
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>
@@ -73,21 +73,13 @@
                             </a>
                         </td>
                     </tr>
-                    @endforeach
+                    @empty
+                    <tr>
+                        <td colspan="6" class="text-center">Tidak ada Data</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
     </div>
 @endsection
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script>
-        // Add active class to current page in pagination
-        document.querySelectorAll('.page-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelector('.page-item.active').classList.remove('active');
-                this.classList.add('active');
-            });
-        });
-    </script>

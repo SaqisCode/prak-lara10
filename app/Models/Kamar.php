@@ -9,7 +9,7 @@ class Kamar extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_kamar', 'lantai', 'kelas', 'jumlah_tt'];
+    protected $fillable = ['nama_kamar', 'lantai', 'kelas'];
 
     public function tempatTidur()
     {

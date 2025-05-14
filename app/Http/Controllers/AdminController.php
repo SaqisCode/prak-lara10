@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
 use App\Models\Pasien;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -11,7 +12,8 @@ class AdminController extends Controller
     public function index()
     {
         $pasiens = Pasien::all();
-        return view('admin.dashboard', compact('pasiens'));
+        $dokters = Dokter::all();
+        return view('admin.dashboard', compact('pasiens', 'dokters'));
     }
 
     public function edit(Pasien $pasien)

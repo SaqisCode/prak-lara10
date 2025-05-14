@@ -2,9 +2,9 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                
+
                 <div class="sb-sidenav-menu-heading">Management</div>
-                
+
                 <!-- Patients Menu -->
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePatients" aria-expanded="false" aria-controls="collapsePatients">
                     <div class="sb-nav-link-icon"><i class="fas fa-procedures"></i></div>
@@ -32,7 +32,7 @@
                     Pasien
                 </a>
                 </div>
-                
+
                 <!-- Doctors Menu -->
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctors" aria-expanded="false" aria-controls="collapseDoctors">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-md"></i></div>
@@ -44,10 +44,12 @@
                 <a href="{{ route('dokter.index') }}" class="nav-link">
                     Data Dokter
                 </a>
-                        <a class="nav-link" href="#">Jadwal Dokter</a>
+                <a href="{{ route('dokter.jadwal') }}" class="nav-link">
+                    Jadwal Dokter
+                </a>
                     </nav>
                 </div>
-                
+
                 <!-- Appointments Menu -->
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAppointments" aria-expanded="false" aria-controls="collapseAppointments">
                     <div class="sb-nav-link-icon"><i class="fas fa-calendar-check"></i></div>
