@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6">Tambah Jadwal Dokter</h1>
+        <h1>Tambah Jadwal Dokter</h1>
 
         <form action="{{ route('dokter.jadwal.store') }}" method="POST">
             @csrf
@@ -22,42 +22,32 @@
                 @enderror
             </div>
 
-            <div class="mb-3">
-                <label for="hari" class="form-label">Hari</label>
-                <select name="hari" id="hari" class="form-select @error('hari') is-invalid @enderror">
-                    <option value="" selected disabled>Pilih Hari</option>
-                    <option value="Senin">Senin</option>
-                    <option value="Selasa">Selasa</option>
-                    <option value="Rabu">Rabu</option>
-                    <option value="Kamis">Kamis</option>
-                    <option value="Jumat">Jumat</option>
-                    <option value="Sabtu">Sabtu</option>
-                    <option value="Minggu">Minggu</option>
-                </select>
-                @error('hari')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
-                <label for="jam_mulai" class="form-label">Jam Mulai</label>
-                <input type="time" name="jam_mulai" id="jam_mulai" class="form-control @error('jam_mulai') is-invalid @enderror" value="{{ old('jam_mulai') }}">
-                @error('jam_mulai')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mb-3">
-                <label for="jam_selesai" class="form-label">Jam Selesai</label>
-                <input type="time" name="jam_selesai" id="jam_selesai" class="form-control @error('jam_selesai') is-invalid @enderror" value="{{ old('jam_selesai') }}">
-                @error('jam_selesai')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+            <div class="row">
+                @php
+                    $days = ['senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'];
+                @endphp
+                @foreach ($days as $day)
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ ucfirst($day) }}</h5>
+                                <div class="mb-3">
+                                    <label for="{{ $day }}" class="form-label">Jadwal {{ ucfirst($day) }}</label>
+                                    <input type="text" name="{{ $day }}" id="{{ $day }}"
+                                        class="form-control @error($day) is-invalid @enderror"
+                                        placeholder="Contoh: 09:00 - 17:00" value="{{ old($day) }}">
+                                    @error($day)
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="{{ route('dokter.jadwal') }}" class="btn btn-secondary">Batal</a>
         </form>
-
     </div>
 @endsection

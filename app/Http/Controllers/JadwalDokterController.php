@@ -2,79 +2,101 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Dokter;
 use App\Models\JadwalDokter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class JadwalDokterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $jadwals = JadwalDokter::with('dokter')->latest()->paginate(10); // Eager load relasi dokter dan paginasi
+        $jadwals = JadwalDokter::with('dokter')->get();
         return view('admin.dokter.jadwal', compact('jadwals'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $dokters = Dokter::all();
         return view('admin.dokter.create-jadwal', compact('dokters'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'dokter_id' => 'required|exists:dokters,id',
-            'hari' => 'required|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu,Minggu',
-            'jam_mulai' => 'required|date_format:H:i',
-            'jam_selesai' => 'required|date_format:H:i|after:jam_mulai',
+            'senin' => 'nullable|string',
+            'selasa' => 'nullable|string',
+            'rabu' => 'nullable|string',
+            'kamis' => 'nullable|string',
+            'jumat' => 'nullable|string',
+            'sabtu' => 'nullable|string',
+            'minggu' => 'nullable|string',
         ]);
 
-        JadwalDokter::create($request->all());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
-        return redirect()->route('dokter.jadwal')->with('success', 'Jadwal dokter berhasil ditambahkan.');
+        JadwalDokter::create([
+            'dokter_id' => $request->dokter_id,
+            'senin' => $request->senin,
+            'selasa' => $request->selasa,
+            'rabu' => $request->rabu,
+            'kamis' => $request->kamis,
+            'jumat' => $request->jumat,
+            'sabtu' => $request->sabtu,
+            'minggu' => $request->minggu,
+        ]);
+
+        return redirect()->route('dokter.jadwal')->with('success', 'Jadwal dokter berhasil disimpan.');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(JadwalDokter $jadwal)
+    public function edit($id)
     {
+        $jadwal = JadwalDokter::findOrFail($id);
         $dokters = Dokter::all();
         return view('admin.dokter.edit-jadwal', compact('jadwal', 'dokters'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, JadwalDokter $jadwal)
+    public function update(Request $request, $id)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'dokter_id' => 'required|exists:dokters,id',
-            'hari' => 'required|in:Senin,Selasa,Rabu,Kamis,Jumat,Sabtu,Minggu',
-            'jam_mulai' => 'required|date_format:H:i',
-            'jam_selesai' => 'required|date_format:H:i|after:jam_mulai',
+            'senin' => 'nullable|string',
+            'selasa' => 'nullable|string',
+            'rabu' => 'nullable|string',
+            'kamis' => 'nullable|string',
+            'jumat' => 'nullable|string',
+            'sabtu' => 'nullable|string',
+            'minggu' => 'nullable|string',
         ]);
 
-        $jadwal->update($request->all());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $jadwal = JadwalDokter::findOrFail($id);
+        $jadwal->update([
+            'dokter_id' => $request->dokter_id,
+            'senin' => $request->senin,
+            'selasa' => $request->selasa,
+            'rabu' => $request->rabu,
+            'kamis' => $request->kamis,
+            'jumat' => $request->jumat,
+            'sabtu' => $request->sabtu,
+            'minggu' => $request->minggu,
+        ]);
 
         return redirect()->route('dokter.jadwal')->with('success', 'Jadwal dokter berhasil diperbarui.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(JadwalDokter $jadwal)
+    public function destroy($id)
     {
+        $jadwal = JadwalDokter::findOrFail($id);
         $jadwal->delete();
+
         return redirect()->route('dokter.jadwal')->with('success', 'Jadwal dokter berhasil dihapus.');
     }
 }

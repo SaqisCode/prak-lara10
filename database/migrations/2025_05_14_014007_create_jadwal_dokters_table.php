@@ -8,23 +8,31 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('jadwal_dokters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dokter_id')->constrained()->onDelete('cascade');
-            $table->enum('hari', ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']);
-            $table->time('jam_mulai');
-            $table->time('jam_selesai');
+            $table->foreignId('dokter_id')->constrained('dokters')->onDelete('cascade');
+            $table->string('senin')->nullable();
+            $table->string('selasa')->nullable();
+            $table->string('rabu')->nullable();
+            $table->string('kamis')->nullable();
+            $table->string('jumat')->nullable();
+            $table->string('sabtu')->nullable();
+            $table->string('minggu')->nullable();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('jadwal_dokters');
     }

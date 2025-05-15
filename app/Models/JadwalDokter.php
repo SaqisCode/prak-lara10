@@ -10,15 +10,21 @@ class JadwalDokter extends Model
 {
     use HasFactory;
 
+    protected $table = 'jadwal_dokters';
+
     protected $fillable = [
         'dokter_id',
-        'hari',
-        'jam_mulai',
-        'jam_selesai',
+        'senin',
+        'selasa',
+        'rabu',
+        'kamis',
+        'jumat',
+        'sabtu',
+        'minggu',
     ];
 
     public function dokter(): BelongsTo
     {
-        return $this->belongsTo(Dokter::class); // Asumsi nama model Dokter adalah 'Dokter'
+        return $this->belongsTo(Dokter::class, 'dokter_id');
     }
 }
