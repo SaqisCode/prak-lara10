@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Kamar;
 use App\Models\TempatTidur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KamarController extends Controller
 {
     public function index() {
         $kamars = Kamar::with('tempatTidur')->get();
-        return view('admin.rawat_inap.index', compact('kamars'));
+        $totalTempatTidur = DB::table('tempat_tidurs')->count();
+        return view('admin.rawat_inap.index', compact('kamars', 'totalTempatTidur'));
     }
 
     public function create() {

@@ -31,7 +31,7 @@
                 <input type="number" class="form-control" name="jumlah_tt" id="jumlah_tt" required>
             </div>
             </div>
-            <button type="submit" class="btn btn-success">Simpan Kamar</button>
+            <button type="submit" class="btn btn-primary">Simpan Kamar</button>
         </form>
     </div>
 @endsection

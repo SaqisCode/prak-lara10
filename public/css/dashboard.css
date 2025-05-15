@@ -41,7 +41,7 @@
 /* Base Styles */
 body {
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
@@ -583,6 +583,42 @@ a {
     position: relative;
     height: 300px;
     width: 100%;
+}
+
+@media (max-width: 767px) {
+    #layoutSidenav #layoutSidenav_nav {
+        transform: translateX(-100%);
+        position: fixed;
+        top: var(--topnav-height);
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        transition: transform 0.3s ease-in-out;
+        background-color: var(--sidebar-bg);
+        width: var(--sidebar-width) !important; /* Tambahkan ini */
+        overflow-y: auto; /* Tambahkan ini */
+    }
+
+    #layoutSidenav #layoutSidenav_nav.sb-sidenav-show {
+        transform: translateX(0); /* Show sidebar when the class is added */
+    }
+
+    #layoutSidenav #layoutSidenav_content {
+        margin-left: 0 !important; /* Reset margin for content */
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    #layoutSidenav.sb-sidenav-toggled #layoutSidenav_content {
+        margin-left: 0 !important; /* Override toggled state on small screens */
+    }
+
+    .sb-topnav .order-1 {
+        order: 0 !important; /* Move burger button to the start */
+    }
+
+    .sb-topnav .ms-auto {
+        margin-left: auto !important; /* Keep user dropdown on the right */
+    }
 }
 
 /* Responsive Adjustments */

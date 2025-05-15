@@ -18,8 +18,8 @@
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="d-flex align-items-center">
-            <span class="me-2 text-muted">Total Kamar:</span>
-            <span class="badge rounded-pill bg-secondary">{{ count($kamars) }}</span>
+            <span class="me-2 text-muted">Total Tempat Tidur:</span>
+            <span class="badge rounded-pill bg-secondary">{{ $totalTempatTidur }}</span>
         </div>
     </div>
 
@@ -56,7 +56,7 @@
                 <td>
                     <ul class="mb-0">
                     @foreach($kamar->tempatTidur as $tt)
-                        <li>{{ $tt->kode_tt }} -
+                        <li>{{ $tt->kode_tt }}
                         <span class="badge bg-{{ $tt->status == 'kosong' ? 'success' : ($tt->status == 'terisi' ? 'danger' : 'warning') }}">
                             {{ ucfirst($tt->status) }}
                         </span>

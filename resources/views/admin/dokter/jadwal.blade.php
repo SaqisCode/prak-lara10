@@ -93,7 +93,7 @@
                 </div>
             @empty
                  <div class="col-12">
-                    <div class="alert alert-warning">Tidak ada jadwal dokter yang tersedia.</div>
+                    <div class="alert alert-second text-center">Tidak ada Data</div>
                 </div>
             @endforelse
         </div>
