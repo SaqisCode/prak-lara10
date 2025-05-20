@@ -229,30 +229,28 @@
                 <div class="col-lg-3 col-md-4">
                     <h5 class="text-white mb-4">Layanan Kami</h5>
                     <div class="footer-links">
-                        <a href="#">Klinik Umum</a>
-                        <a href="#">KIA & KB</a>
-                        <a href="#">Imunisasi</a>
+                        <a href="#">Pelayanan Klinik</a>
+                        <a href="#">Kesehatan Ibu & Anak</a>
                         <a href="#">Laboratorium</a>
-                        <a href="#">Gigi & Mulut</a>
+                        <a href="#">Apotek</a>
+                        <a href="#">Gawat Darurat</a>
+                        <a href="#">Posyandu</a>
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4">
                     <h5 class="text-white mb-4">Kontak Kami</h5>
                     <div class="d-flex mb-3">
                         <i class="bi bi-geo-alt-fill me-3 mt-1"></i>
-                        <p class="mb-0">Jl. Kesehatan No. 123, Djatiroto, Lumajang, Jawa Timur</p>
+                        <p class="mb-0">Jl. Dr. Soetomo No.01, Persil, Jatiroto, Kec. Jatiroto, Kabupaten Lumajang, Jawa Timur 67355</p>
                     </div>
                     <div class="d-flex mb-3">
                         <i class="bi bi-telephone-fill me-3 mt-1"></i>
-                        <p class="mb-0">(0334) 581234</p>
+                        <p class="mb-0">(0334) 323210</p>
                     </div>
                     <div class="d-flex mb-3">
                         <i class="bi bi-envelope-fill me-3 mt-1"></i>
-                        <p class="mb-0">info@puskesmasdjatiroto.id</p>
-                    </div>
-                    <div class="d-flex">
-                        <i class="bi bi-clock-fill me-3 mt-1"></i>
-                        <p class="mb-0">Senin-Minggu: 07.00 - 21.00 WIB</p>
+                        <p class="mb-0">pkmjtr@gmail.com</p>
                     </div>
                 </div>
             </div>

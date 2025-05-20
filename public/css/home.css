@@ -8,15 +8,19 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--text-dark);
     overflow-x: hidden;
 }
 
 /* Header Styles */
 .main-header {
-    background: linear-gradient(135deg, rgba(26, 111, 84, 0.9) 0%, rgba(14, 90, 66, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background: linear-gradient(
+            135deg,
+            rgba(26, 111, 84, 0.9) 0%,
+            rgba(14, 90, 66, 0.9) 100%
+        ),
+        url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
     background-size: cover;
     background-position: center;
     color: white;
@@ -61,6 +65,10 @@ body {
 }
 
 /* Service Cards */
+.title-container {
+    padding-top: 50px;
+}
+
 .service-card {
     border: none;
     border-radius: 10px;
@@ -167,7 +175,11 @@ body {
     left: 0;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    background: linear-gradient(
+        90deg,
+        var(--primary-color) 0%,
+        var(--accent-color) 100%
+    );
     border-radius: 2px;
 }
 
@@ -192,32 +204,32 @@ body {
 
 /* Slider Container */
 .slider-container {
-position: relative;
-margin: 30px 0;
-overflow: hidden;
+    position: relative;
+    margin: 30px 0;
+    overflow: hidden;
 }
 
 /* Service Slider */
 .service-slider {
-display: flex;
-transition: transform 0.5s ease;
-gap: 20px;
-padding: 10px 5px;
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+    padding: 10px 5px;
 }
 
 /* Service Card */
 .service-card {
-flex: 0 0 300px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-border-radius: 10px;
-border: none;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-display: grid;
-grid-template-rows: auto 1fr auto;
-min-height: 200px;
-max-height: 250px;
-height: 250px;
-overflow: hidden;
+    flex: 0 0 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 200px;
+    max-height: 250px;
+    height: 250px;
+    overflow: hidden;
 }
 
 .service-card p {
@@ -227,82 +239,82 @@ overflow: hidden;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 1rem;
-    color: #6A6D81;
+    color: #6a6d81;
 }
 
 .service-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Service Icon */
 .service-icon {
-font-size: 2.5rem;
-margin-bottom: 15px;
-color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
 }
 
 /* Slider Controls */
 .slider-controls {
-position: absolute;
-top: 45%;
-width: 100%;
-display: flex;
-justify-content: space-between;
-transform: translateY(-50%);
-z-index: 10;
-padding: 0 10px;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 0 10px;
 }
 
 .slider-btn {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background-color: #fff;
-border: 1px solid #ddd;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-transition: all 0.3s ease;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .slider-btn:hover {
-background-color: var(--accent-color);
-color: white;
+    background-color: var(--accent-color);
+    color: white;
 }
 
 /* Slider Dots */
 .slider-dots {
-display: flex;
-justify-content: center;
-margin-top: 20px;
-gap: 8px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
 }
 
 .dot {
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background-color: #ddd;
-cursor: pointer;
-transition: background-color 0.3s ease;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .dot.active {
-background-color: var(--accent-color);
+    background-color: var(--accent-color);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-.service-card {
-flex: 0 0 250px;
-}
+    .service-card {
+        flex: 0 0 250px;
+    }
 }
 
 @media (max-width: 576px) {
-.service-card {
-flex: 0 0 220px;
-}
+    .service-card {
+        flex: 0 0 220px;
+    }
 }
