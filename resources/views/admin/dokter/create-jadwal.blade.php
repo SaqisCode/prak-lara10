@@ -32,10 +32,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ ucfirst($day) }}</h5>
                                 <div class="mb-3">
-                                    <label for="{{ $day }}" class="form-label">Jadwal {{ ucfirst($day) }}</label>
                                     <input type="text" name="{{ $day }}" id="{{ $day }}"
                                         class="form-control @error($day) is-invalid @enderror"
-                                        placeholder="Contoh: 09:00 - 17:00" value="{{ old($day) }}">
+                                        placeholder="Contoh: 09.00 - 12.00" value="{{ old($day) }}">
                                     @error($day)
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror

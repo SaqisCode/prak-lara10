@@ -18,12 +18,8 @@ class Pasien extends Authenticatable
         'password',
     ];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    protected $casts = [
-        'password' => 'hashed',
-    ];
+    public function rawatInap()
+    {
+        return $this->hasMany(RawatInap::class);
+    }
 }

@@ -44,10 +44,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
-                            <option value="L" >Laki-laki</option>
+                        <select class="form-control @error('jenis_kelamin') is-invalid @enderror" id="jenis_kelamin" name="jenis_kelamin">
+                            <option value="" selected disabled>Pilih Jenis Kelamin</option>
+                            <option value="L">Laki-laki</option>
                             <option value="P">Perempuan</option>
                         </select>
+                        @error("jenis_kelamin")
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>

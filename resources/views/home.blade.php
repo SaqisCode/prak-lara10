@@ -155,7 +155,9 @@
             </div>
             <div class="slider-dots"></div>
             <div class="text-center">
-                <div class="btn btn-primary mt-3">Buat Janji Temu Dengan Dokter</div>
+                <a href="{{ route('janji.temu') }}" class="btn btn-primary mt-3">
+                    Buat Janji Temu Dengan Dokter
+                </a>
             </div>
         </div>
     </section>

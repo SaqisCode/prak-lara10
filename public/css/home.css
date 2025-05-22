@@ -318,3 +318,16 @@ body {
         flex: 0 0 220px;
     }
 }
+
+/* resources/css/app.css */
+.card-hover:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.badge-jadwal {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}

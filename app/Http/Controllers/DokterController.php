@@ -65,6 +65,7 @@ class DokterController extends Controller
         'nik.max_digits' => 'NIK tidak dapat lebih dari 16 digit!',
         'nik.min_digits' => 'NIK tidak dapat kurang dari 16 digit!',
         'nik.unique' => 'NIK ini sudah digunakan oleh pasien lain!',
+        'jenis_kelamin.required' => 'Wajib mengisi Jenis Kelamin!',
         'password.required' => 'Wajib mengisi Password!',
     ]);
 
@@ -128,6 +129,7 @@ class DokterController extends Controller
             'nik.max_digits' => 'NIK tidak dapat lebih dari 16 digit!',
             'nik.min_digits' => 'NIK tidak dapat kurang dari 16 digit!',
             'nik.unique' => 'NIK ini sudah digunakan oleh pasien lain!',
+            'jenis_kelamin.required' => 'Wajib mengisi Jenis Kelamin!',
             'password.required' => 'Wajib mengisi Password!',
         ]);
 
@@ -148,5 +150,11 @@ class DokterController extends Controller
         $dokter->delete();
 
         return redirect()->route('dokter.index')->with('success', 'Data dokter berhasil dihapus!');
+    }
+
+    public function search()
+    {
+        $dokters = Dokter::with('spesialisasi')->get();
+        return view('dokter', compact('dokters'));
     }
 }

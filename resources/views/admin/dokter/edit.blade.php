@@ -25,9 +25,20 @@
             </div>
             <div class="mb-3">
                 <label for="spesialis" class="form-label">Spesialis</label>
-                <input type="spesialis" class="form-control @error("spesialis") is-invalid @enderror" id="spesialis" name="spesialis" value="{{ $dokter->spesialis }}">
+                <select class="form-control @error('spesialis') is-invalid @enderror" id="spesialis" name="spesialis" value="{{ $dokter->spesialis }}">
+                    <option value="" selected disabled>Pilih Spesialis</option>
+                    <option value="Mata" {{ old('spesialis') == 'Mata' ? 'selected' : '' }}>Mata</option>
+                    <option value="THT" {{ old('spesialis') == 'THT' ? 'selected' : '' }}>THT</option>
+                    <option value="Saraf" {{ old('spesialis') == 'Saraf' ? 'selected' : '' }}>Saraf</option>
+                    <option value="Gigi" {{ old('spesialis') == 'Gigi' ? 'selected' : '' }}>Gigi</option>
+                    <option value="Ibu & Anak" {{ old('spesialis') == 'Ibu & Anak' ? 'selected' : '' }}>Ibu & Anak</option>
+                    <option value="Kandungan" {{ old('spesialis') == 'Kandungan' ? 'selected' : '' }}>Kandungan</option>
+                    <option value="Bedah" {{ old('spesialis') == 'Bedah' ? 'selected' : '' }}>Bedah</option>
+                    <option value="Penyakit Dalam" {{ old('spesialis') == 'Penyakit Dalam' ? 'selected' : '' }}>Penyakit Dalam</option>
+                    <option value="Umum" {{ old('spesialis') == 'Umum' ? 'selected' : '' }}>Umum</option>
+                </select>
                 @error("spesialis")
-                    <div class="alert alert-danger">{{ $message }}</div>
+                <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="mb-3">
@@ -39,10 +50,14 @@
             </div>
             <div class="mb-3">
                 <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
-                    <option value="Laki-laki" {{ $dokter->jenis_kelamin == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                    <option value="Perempuan" {{ $dokter->jenis_kelamin == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                <select class="form-control @error('jenis_kelamin') is-invalid @enderror" id="jenis_kelamin" name="jenis_kelamin" value="{{ $dokter->jenis_kelamin }}">
+                    <option value="" selected disabled>Pilih Jenis Kelamin</option>
+                    <option value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
                 </select>
+                @error("jenis_kelamin")
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>

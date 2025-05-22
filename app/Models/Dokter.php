@@ -17,7 +17,6 @@ class Dokter extends Model
         'nik',
         'jenis_kelamin',
         'password',
-        // tambahkan kolom lain sesuai kebutuhan
     ];
 
     public function jadwalDokters(): HasMany

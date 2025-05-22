@@ -46,16 +46,18 @@
                 @forelse($rawatInaps as $rawat)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $rawat->pasien->name }}
-                            <div class="text-sm text-gray-500">0821-3345-6789</div>
+                        <td>
+                            <strong>{{ $rawat->pasien->name }}</strong>
                         </td>
                         <td>{{ $rawat->tempatTidur->kamar->nama_kamar }}</td>
                         <td>{{ $rawat->tempatTidur->kode_tt }}</td>
                         <td>{{ \Carbon\Carbon::parse($rawat->tanggal_masuk)->format('d-m-Y') }}</td>
                         <td>
-                            <a href="" class="btn btn-info btn-sm">
-                                <i class="bi bi-eye"></i> Detail
-                            </a>
+                            @foreach($rawatInaps as $rawatInap)
+                                <a href="{{ route('rawatInap.show', $rawatInap->id) }}" class="btn btn-info btn-sm">
+                                    <i class="bi bi-eye"></i> Detail
+                                </a>
+                            @endforeach
                             <form action="{{ route('rawatInap.destroy', $rawat->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin memulangkan pasien?')">
                                 @csrf
                                 @method('DELETE')

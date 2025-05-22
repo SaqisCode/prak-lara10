@@ -60,4 +60,11 @@ class RawatInapController extends Controller
 
         return redirect()->route('rawatInap.index')->with('success', 'Pasien berhasil dipulangkan!');
     }
+
+    public function show($id)  // Tambahkan parameter $id
+    {
+        // Untuk menampilkan DETAIL satu pasien
+        $rawatInap = RawatInap::with(['pasien', 'tempatTidur.kamar'])->findOrFail($id);
+        return view('admin.rawat_inap.show', compact('rawatInap'));
+    }
 }

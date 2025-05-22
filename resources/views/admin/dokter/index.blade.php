@@ -51,7 +51,6 @@
                         <td>{{ $index + 1 }}</td>
                         <td>
                             <strong>{{ $dokter->name }}</strong>
-                            <div class="text-sm text-gray-500">0821-3345-6789</div>
                         </td>
                         <td>{{ $dokter->spesialis}}</td>
                         <td>{{ $dokter->nik }}</td>
