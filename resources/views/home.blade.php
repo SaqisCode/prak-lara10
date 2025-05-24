@@ -71,10 +71,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                         alt="Dokter Puskesmas" class="img-fluid rounded-3 shadow">
-                </div>
             </div>
         </div>
     </header>
