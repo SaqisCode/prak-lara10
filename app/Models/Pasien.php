@@ -22,4 +22,5 @@ class Pasien extends Authenticatable
     {
         return $this->hasMany(RawatInap::class);
     }
+
 }

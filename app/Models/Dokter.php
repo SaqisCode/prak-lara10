@@ -23,6 +23,7 @@ class Dokter extends Model
     {
         return $this->hasMany(JadwalDokter::class);
     }
+
     // Anda bisa menambahkan relasi dengan tabel lain di sini jika ada,
     // contohnya dengan tabel pasien atau jadwal.
     // public function patients() {

@@ -13,7 +13,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
+            <a class="navbar-brand fw-bold" href="{{ route('home') }}">
                 <i class="bi bi-heart-pulse me-2"></i>Puskesmas Djatiroto
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -26,9 +26,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#layanan">Layanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#dokter">Dokter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#kontak">Kontak</a>
@@ -64,12 +61,6 @@
                         <h3> Selamat Datang , Guest </h3>
                     @endif
                     <h1 class="hero-title">Pelayanan Kesehatan Terpadu Untuk Masyarakat</h1>
-                    <p class="hero-subtitle">Puskesmas Djatiroto memberikan pelayanan kesehatan yang berkualitas dengan fasilitas modern dan tenaga medis profesional.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#layanan" class="btn btn-primary">
-                            <i class="bi bi-search-heart me-2"></i>Lihat Layanan
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -151,41 +142,9 @@
             </div>
             <div class="slider-dots"></div>
             <div class="text-center">
-                <a href="{{ route('janji.temu') }}" class="btn btn-primary mt-3">
+                <a href="{{ route('janji.temu') }}" class="btn btn-primary">
                     Buat Janji Temu Dengan Dokter
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-4 text-center">
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <h2 class="fw-bold">15+</h2>
-                        <p class="mb-0">Tenaga Medis</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <h2 class="fw-bold">24/7</h2>
-                        <p class="mb-0">Layanan Gawat Darurat</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <h2 class="fw-bold">10+</h2>
-                        <p class="mb-0">Jenis Layanan</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="p-3">
-                        <h2 class="fw-bold">5000+</h2>
-                        <p class="mb-0">Pasien Per Bulan</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -198,57 +157,19 @@
                     <h4 class="text-white mb-4">
                         <i class="bi bi-heart-pulse me-2"></i>Puskesmas Djatiroto
                     </h4>
-                    <p>Memberikan pelayanan kesehatan prima untuk masyarakat dengan fasilitas modern dan tenaga medis profesional.</p>
+                    <p><i class="bi bi-geo-alt-fill me-3 mt-1"> Jl. Dr. Soetomo No.01, Persil, Jatiroto, Kec. Jatiroto, Kabupaten Lumajang, Jawa Timur 67355</i></p>
+                    <p><i class="bi bi-telephone-fill me-3 mt-1"> (0334) 323210</i></p>
+                    <p><i class="bi bi-envelope-fill me-3 mt-1"> pkmjtr@gmail.com</i></p>
                     <div class="mt-4">
                         <a href="#" class="social-icon">
                             <i class="bi bi-facebook"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="https://www.instagram.com/pkm_jatiroto/" class="social-icon">
                             <i class="bi bi-instagram"></i>
                         </a>
                         <a href="#" class="social-icon">
                             <i class="bi bi-whatsapp"></i>
                         </a>
-                        <a href="#" class="social-icon">
-                            <i class="bi bi-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="text-white mb-4">Tautan Cepat</h5>
-                    <div class="footer-links">
-                        <a href="#home">Beranda</a>
-                        <a href="#layanan">Layanan</a>
-                        <a href="#fasilitas">Fasilitas</a>
-                        <a href="#dokter">Dokter</a>
-                        <a href="#kontak">Kontak</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="text-white mb-4">Layanan Kami</h5>
-                    <div class="footer-links">
-                        <a href="#">Pelayanan Klinik</a>
-                        <a href="#">Kesehatan Ibu & Anak</a>
-                        <a href="#">Laboratorium</a>
-                        <a href="#">Apotek</a>
-                        <a href="#">Gawat Darurat</a>
-                        <a href="#">Posyandu</a>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="text-white mb-4">Kontak Kami</h5>
-                    <div class="d-flex mb-3">
-                        <i class="bi bi-geo-alt-fill me-3 mt-1"></i>
-                        <p class="mb-0">Jl. Dr. Soetomo No.01, Persil, Jatiroto, Kec. Jatiroto, Kabupaten Lumajang, Jawa Timur 67355</p>
-                    </div>
-                    <div class="d-flex mb-3">
-                        <i class="bi bi-telephone-fill me-3 mt-1"></i>
-                        <p class="mb-0">(0334) 323210</p>
-                    </div>
-                    <div class="d-flex mb-3">
-                        <i class="bi bi-envelope-fill me-3 mt-1"></i>
-                        <p class="mb-0">pkmjtr@gmail.com</p>
                     </div>
                 </div>
             </div>

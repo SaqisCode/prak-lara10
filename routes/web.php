@@ -52,3 +52,8 @@ Route::get('/jadwal/{jadwal}/edit', [JadwalDokterController::class, 'edit'])->na
 Route::put('/jadwal/{jadwal}', [JadwalDokterController::class, 'update'])->name('dokter.jadwal.update');
 Route::delete('/jadwal/{jadwal}', [JadwalDokterController::class, 'destroy'])->name('dokter.jadwal.destroy');
 
+// Tambahkan route baru
+Route::get('/janji-temu/{jadwal}/form', [JanjiTemuController::class, 'showForm'])->name('janji.temu.form');
+Route::post('/janji-temu/{jadwal}', [JanjiTemuController::class, 'store'])->name('janji.temu.store');
+
+Route::get('/admin/janji-temu', [JanjiTemuController::class, 'adminIndex'])->name('janji-temu.index');

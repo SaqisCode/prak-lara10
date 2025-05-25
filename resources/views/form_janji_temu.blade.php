@@ -60,89 +60,47 @@
         </div>
     </header>
 
-    <!-- Services Section -->
-    <div class="container py-5">
-        <div class="title-container">
-            <h2 class="section-title">Jadwal Dokter</h2>
-        </div>
-
-    @forelse ($jadwals as $jadwal)
-        <div class="card mb-4 border-0 shadow-sm">
-            <div class="card-body p-10">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h5 class="fw-bold mb-1">{{ $jadwal->dokter->name ?? '-' }}</h5>
-                        <p class="text-muted mb-0">
-                            <i class="fas fa-stethoscope"></i>
-                            Spesialis {{ $jadwal->dokter->spesialis ?? '-' }}
-                        </p>
-                    </div>
-                    <button class="btn btn-sm btn-primary mb-0 mt-0"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#jadwalDetail{{ $jadwal->id }}"
-                            aria-expanded="false"
-                            aria-controls="jadwalDetail{{ $jadwal->id }}">
-                        Lihat Jadwal <i class="fas fa-chevron-down ms-2"></i>
-                    </button>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Form Janji Temu</h4>
                 </div>
+                <div class="card-body">
+                    <h5 class="card-title">Dr. {{ $jadwal->dokter->name }}</h5>
+                    <p class="card-text">Spesialis {{ $jadwal->dokter->spesialis }}</p>
+                    <hr>
 
-                <div class="collapse mt-3" id="jadwalDetail{{ $jadwal->id }}">
-                    <div class="table-responsive">
-                        <table class="table table-bordered mb-0">
-                            <thead class="table-light">
-                                <tr class="text-center">
-                                    @foreach(['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] as $hari)
-                                    <th class="py-2">{{ $hari }}</th>
-                                    @endforeach
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="text-center">
-                                    @foreach(['senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'] as $hari)
-                                    <td class="py-2">
-                                        @if(!empty($jadwal->$hari))
-                                            <span class="badge bg-primary bg-opacity-10 text-primary">
-                                                {{ $jadwal->$hari }}
-                                            </span>
-                                        @else
-                                            <span class="text-muted">-</span>
-                                        @endif
-                                    </td>
-                                    @endforeach
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <form action="{{ route('janji.temu.store', $jadwal->id) }}" method="POST">
+                        @csrf
 
-<!-- Dalam file resources/views/janji_temu.blade.php -->
-<div class="text-center d-grid">
-    @auth
-        @if(Auth::user() instanceof \App\Models\Pasien)
-            <a href="{{ route('janji.temu.form', $jadwal->id) }}"
-               class="btn btn-primary mt-3 w-100">
-                <i class="fas fa-calendar-check me-2"></i> Buat Janji
-            </a>
-        @else
-            <button class="btn btn-secondary mt-3 w-100" disabled>
-                <i class="fas fa-calendar-check me-2"></i> Hanya untuk Pasien
-            </button>
-        @endif
-    @else
-        <a href="{{ route('login') }}" class="btn btn-primary mt-3 w-100">
-            <i class="fas fa-sign-in-alt me-2"></i> Login untuk Buat Janji
-        </a>
-    @endauth
-</div>
+                        <div class="mb-3">
+                            <label for="hari" class="form-label">Hari</label>
+                            <select class="form-select" id="hari" name="hari" required>
+                                <option value="">Pilih Hari</option>
+                                @foreach(['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] as $day)
+                                    @if(!empty($jadwal->{strtolower($day)}))
+                                        <option value="{{ $day }}">{{ $day }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="keluhan" class="form-label">Keluhan</label>
+                            <textarea class="form-control" id="keluhan" name="keluhan" rows="3"></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Buat Janji Temu</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        @empty
-        <div class="alert alert-info text-center">
-            <i class="fas fa-info-circle me-2"></i> Tidak ada jadwal dokter tersedia
-        </div>
-        @endforelse
     </div>
+</div>
 
     <!-- Footer -->
     <footer id="kontak" class="main-footer">

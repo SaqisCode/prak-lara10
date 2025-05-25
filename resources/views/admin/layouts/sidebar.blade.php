@@ -57,8 +57,7 @@
                 </a>
                 <div class="collapse" id="collapseAppointments" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Data Janji Temu</a>
-                        <a class="nav-link" href="#">Kalender</a>
+                        <a class="nav-link" href="{{ route('janji-temu.index') }}">Data Janji Temu</a>
                     </nav>
                 </div>
             </div>

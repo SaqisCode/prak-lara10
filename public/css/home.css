@@ -15,11 +15,7 @@ body {
 
 /* Header Styles */
 .main-header {
-    background: linear-gradient(
-            135deg,
-            rgba(26, 111, 84, 0.9) 0%,
-            rgba(14, 90, 66, 0.9) 100%
-        );
+    background: var(--primary-color);
     background-size: cover;
     background-position: center;
     color: white;
@@ -37,17 +33,9 @@ body {
 }
 
 .navbar.scrolled {
-    background-color: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     padding: 10px 0;
-}
-
-.navbar.scrolled .nav-link {
-    color: var(--text-dark) !important;
-}
-
-.navbar.scrolled .navbar-brand {
-    color: var(--primary-color) !important;
 }
 
 .hero-title {
@@ -127,6 +115,8 @@ body {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     padding: 10px 25px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     border-radius: 50px;
     font-weight: 500;
     transition: all 0.3s ease;

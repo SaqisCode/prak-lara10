@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dokter;
 use App\Models\Pasien;
+use App\Models\JanjiTemu; // Tambahkan ini
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -13,7 +14,9 @@ class AdminController extends Controller
     {
         $pasiens = Pasien::all();
         $dokters = Dokter::all();
-        return view('admin.dashboard', compact('pasiens', 'dokters'));
+        $janjiTemus = JanjiTemu::with(['pasien', 'dokter', 'jadwalDokter'])->get(); // Tambahkan ini
+
+        return view('admin.dashboard', compact('pasiens', 'dokters', 'janjiTemus'));
     }
 
     public function edit(Pasien $pasien)
