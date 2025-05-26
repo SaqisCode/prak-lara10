@@ -5,15 +5,7 @@
 @section('content')
     <div class="container mt-5">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">Data Dokter</h1>
-        <div class="flex space-x-3 mt-4 md:mt-0">
-            <div class="relative">
-                <input type="text" class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm" placeholder="Cari dokter...">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                    <i class="fas fa-search text-gray-400"></i>
-                </span>
-            </div>
-        </div>
+        <h1 class="text-2xl font-bold text-gray-800">Dokter > Data Dokter</h1>
     </div>
 
         <div class="d-flex justify-content-between align-items-center mb-4">

@@ -64,9 +64,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">Form Janji Temu</h4>
-                </div>
                 <div class="card-body">
                     <h5 class="card-title">Dr. {{ $jadwal->dokter->name }}</h5>
                     <p class="card-text">Spesialis {{ $jadwal->dokter->spesialis }}</p>
@@ -85,11 +82,6 @@
                                     @endif
                                 @endforeach
                             </select>
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="keluhan" class="form-label">Keluhan</label>
-                            <textarea class="form-control" id="keluhan" name="keluhan" rows="3"></textarea>
                         </div>
 
                         <div class="d-grid">

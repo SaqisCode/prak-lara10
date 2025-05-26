@@ -41,8 +41,6 @@ class JanjiTemuController extends Controller
 
         $request->validate([
             'hari' => 'required|string',
-            'waktu' => 'required|string',
-            'keluhan' => 'nullable|string',
         ]);
 
         $jadwal = JadwalDokter::findOrFail($jadwalId);
@@ -52,8 +50,6 @@ class JanjiTemuController extends Controller
             'dokter_id' => $jadwal->dokter_id,
             'jadwal_dokter_id' => $jadwal->id,
             'hari' => $request->hari,
-            'waktu' => $request->waktu,
-            'keluhan' => $request->keluhan,
             'status' => 'menunggu'
         ]);
 
@@ -70,4 +66,37 @@ class JanjiTemuController extends Controller
         $jadwal = JadwalDokter::with('dokter')->findOrFail($jadwalId);
         return view('form_janji_temu', compact('jadwal'));
     }
+
+    // Tambahkan method berikut ke JanjiTemuController
+public function show(JanjiTemu $janjiTemu)
+{
+    $janjiTemu->load(['pasien', 'dokter', 'jadwalDokter']);
+    return view('admin.janji-temu.show', compact('janjiTemu'));
+}
+
+public function edit(JanjiTemu $janjiTemu)
+{
+    return view('admin.janji-temu.edit', compact('janjiTemu'));
+}
+
+public function update(Request $request, JanjiTemu $janjiTemu)
+{
+    $request->validate([
+        'hari' => 'required|string',
+        'status' => 'required|in:menunggu,disetujui,ditolak,selesai'
+    ]);
+
+    $janjiTemu->update([
+        'hari' => $request->hari,
+        'status' => $request->status
+    ]);
+
+    return redirect()->route('janji-temu.show', $janjiTemu->id)->with('success', 'Janji temu berhasil diperbarui!');
+}
+
+public function destroy(JanjiTemu $janjiTemu)
+{
+    $janjiTemu->delete();
+    return redirect()->route('janji-temu.index')->with('success', 'Janji temu berhasil dihapus!');
+}
 }

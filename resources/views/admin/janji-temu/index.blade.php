@@ -5,15 +5,7 @@
 @section('content')
     <div class="container mt-5">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">Daftar Janji Temu</h1>
-        <div class="flex space-x-3 mt-4 md:mt-0">
-            <div class="relative">
-                <input type="text" class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm" placeholder="Cari janji temu...">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                    <i class="fas fa-search text-gray-400"></i>
-                </span>
-            </div>
-        </div>
+        <h1 class="text-2xl font-bold text-gray-800">Janji Temu > Data</h1>
     </div>
 
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -31,8 +23,6 @@
                             <th>Dokter</th>
                             <th>Spesialis</th>
                             <th>Hari</th>
-                            <th>Waktu</th>
-                            <th>Keluhan</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -41,17 +31,26 @@
                         @foreach($janjiTemus as $index => $janji)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $janji->pasien->name }}</td>
-                            <td>{{ $janji->dokter->name }}</td>
+                            <td><strong>{{ $janji->pasien->name }}</strong></td>
+                            <td><strong>{{ $janji->dokter->name }}</strong></td>
                             <td>{{ $janji->dokter->spesialis }}</td>
                             <td>{{ $janji->hari }}</td>
-                            <td>{{ $janji->waktu }}</td>
-                            <td>{{ $janji->keluhan ?? '-' }}</td>
                             <td>{{ $janji->status }}</td>
-                            <td>
-                                <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                                <a href="#" class="btn btn-sm btn-info">Edit</a>
-                            </td>
+<td>
+    <a href="{{ route('janji-temu.show', $janji->id) }}" class="btn btn-sm btn-info">
+        <i class="bi bi-eye"></i> Detail
+    </a>
+    <a href="{{ route('janji-temu.edit', $janji->id) }}" class="btn btn-sm btn-warning">
+        <i class="bi bi-pencil"></i> Edit
+    </a>
+    <form action="{{ route('janji-temu.destroy', $janji->id) }}" method="POST" style="display:inline;">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus janji temu ini?')">
+            <i class="bi bi-trash"></i> Hapus
+        </button>
+    </form>
+</td>
                         </tr>
                         @endforeach
                     </tbody>

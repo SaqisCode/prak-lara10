@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('dokter_id')->constrained('dokters')->onDelete('cascade');
             $table->foreignId('jadwal_dokter_id')->constrained('jadwal_dokters')->onDelete('cascade');
             $table->string('hari');
-            $table->text('keluhan')->nullable();
             $table->string('status')->default('menunggu');
             $table->timestamps();
         });

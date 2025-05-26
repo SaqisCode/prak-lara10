@@ -56,4 +56,11 @@ Route::delete('/jadwal/{jadwal}', [JadwalDokterController::class, 'destroy'])->n
 Route::get('/janji-temu/{jadwal}/form', [JanjiTemuController::class, 'showForm'])->name('janji.temu.form');
 Route::post('/janji-temu/{jadwal}', [JanjiTemuController::class, 'store'])->name('janji.temu.store');
 
-Route::get('/admin/janji-temu', [JanjiTemuController::class, 'adminIndex'])->name('janji-temu.index');
+// Route::get('/admin/janji-temu', [JanjiTemuController::class, 'adminIndex'])->name('janji-temu.index');
+Route::prefix('admin/janji-temu')->group(function () {
+    Route::get('/', [JanjiTemuController::class, 'adminIndex'])->name('janji-temu.index');
+    Route::get('/{janjiTemu}', [JanjiTemuController::class, 'show'])->name('janji-temu.show');
+    Route::get('/{janjiTemu}/edit', [JanjiTemuController::class, 'edit'])->name('janji-temu.edit');
+    Route::put('/{janjiTemu}', [JanjiTemuController::class, 'update'])->name('janji-temu.update');
+    Route::delete('/{janjiTemu}', [JanjiTemuController::class, 'destroy'])->name('janji-temu.destroy');
+});

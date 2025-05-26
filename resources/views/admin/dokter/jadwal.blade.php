@@ -5,20 +5,10 @@
 @section('content')
     <div class="container mt-5">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
-            <h1 class="text-2xl font-bold text-gray-800">Jadwal Dokter</h1>
-            <div class="flex space-x-3 mt-4 md:mt-0 mb-2">
-                <div class="relative">
-                    <input type="text"
-                           class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-sm"
-                           placeholder="Cari dokter...">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                        <i class="fas fa-search text-gray-400"></i>
-                    </span>
-                </div>
-            </div>
+            <h1 class="text-2xl font-bold text-gray-800">Dokter > Jadwal Dokter</h1>
         </div>
 
-        <a href="{{ route('dokter.jadwal.create') }}" class="btn btn-primary mb-2">Tambah Jadwal Dokter</a>
+        <a href="{{ route('dokter.jadwal.create') }}" class="btn btn-primary mb-3 mt-3">Tambah Jadwal Dokter</a>
 
         @if(session('success'))
             <div class="alert alert-success alert-dismissible fade show mb-4">
@@ -35,17 +25,17 @@
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="card-title fw-semibold mb-1">{{ $jadwal->dokter->name ?? '-' }}</h5>
-                                <p class="card-subtitle mb-2 text-muted">Spesialis {{ $jadwal->dokter->spesialis ?? '-' }}</p>
+                                <p class="card-subtitle text-muted">Spesialis {{ $jadwal->dokter->spesialis ?? '-' }}</p>
                             </div>
                             <div>
                                 <a href="{{ route('dokter.jadwal.edit', $jadwal->id) }}"
-                                   class="btn btn-sm btn-warning me-2">Edit</a>
+                                   class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Edit</a>
                                 <form action="{{ route('dokter.jadwal.destroy', $jadwal->id) }}" method="POST"
                                       class="d-inline me-2">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Yakin ingin menghapus jadwal ini?')">Hapus
+                                            onclick="return confirm('Yakin ingin menghapus jadwal ini?')"><i class="bi bi-trash"></i> Hapus
                                     </button>
                                 </form>
                                 <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse"

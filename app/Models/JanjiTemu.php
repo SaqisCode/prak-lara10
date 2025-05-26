@@ -14,7 +14,6 @@ class JanjiTemu extends Model
         'dokter_id',
         'jadwal_dokter_id',
         'hari',
-        'keluhan',
         'status'
     ];
 
